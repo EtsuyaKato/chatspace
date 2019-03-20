@@ -12,7 +12,7 @@
 - belongs_to :group
 - belongs_to :user
 
-## userテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -24,7 +24,7 @@
 
 
 
-##groupテーブル
+##groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -33,7 +33,7 @@
 ### Association
 - has_many :users, through: :members
 
-## membersテーブル
+## users_groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
