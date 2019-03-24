@@ -3,7 +3,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false, foreign_key: true|
+|body|text|null: false|
 |image|string|foreign_key: true|
 |user_id|interger|null: false, foreign_key: true|
 |group_id|interger|null: false, foreign_key: true|
@@ -16,11 +16,12 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|strng|null: false, foreign_key: true|
+|name|strng|null: false|
 
 ### Association
 
-- has_many :groups, through: :members
+- has_many :groups, through: :users_groups
+- has_many :messages
 
 
 
@@ -31,7 +32,7 @@
 |group_name|string|null: false, foregin_key: true|
 
 ### Association
-- has_many :users, through: :members
+- has_many :users, through: :users_groups
 
 ## users_groupsテーブル
 
