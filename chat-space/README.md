@@ -3,7 +3,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text||
 |image|string||
 |user_id|interger|null: false, foreign_key: true|
 |group_id|interger|null: false, foreign_key: true|
