@@ -1,63 +1,61 @@
-    .wrapper
-      .side-bar
-        .side-header
-          .side-header__line
-            %p.side-header__line__name
-              加藤
-            %ul.side-header__line__menu
-              %li.side-header__line__menu__edit-user
-                %a(href="")
-                  %i.far.fa-edit
-              %li.side-header__line__menu__new-group
-                %a(href="")
-                  %i.fas.fa-cog
+.wrapper
+  .side-bar
+    .side-header
+      .side-header__line
+        %p.side-header__line__name
+          加藤
+        %ul.side-header__line__menu
+          %li.side-header__line__menu__edit-user
+            %a(href="")
+              %i.far.fa-edit
+          %li.side-header__line__menu__new-group
+            %a(href="")
+              %i.fas.fa-cog
 
 
-        .groups
-          %a
-            .group
-              %p.group__name
-                sample-group1
-              %p.group__latest-message
-                こんにちは
-          %a
-            .group
-              %p.group__name
-                sample-group2
-              %p.group__latest-message
-                こんばんは
-      /サイドバーはここまで
+    .groups
+      %a
+        .group
+          %p.group__name
+            sample-group1
+          %p.group__latest-message
+            こんにちは
+      %a
+        .group
+          %p.group__name
+            sample-group2
+          %p.group__latest-message
+            こんばんは
 
-      .main
-        .main-header
-          .main-header__left
-            %h1.main-header__left__current-group
-              sample-group1
-            %ul.main-header__left__member-list
-              Member:
-              %li.main-header__left__member-list__member
-                member1
-              %li.main-header__left__member-list__member
-                member2
-              %li.main-header__left__member-list__member
-                member3
-          %a.main-header__right
-            .main-header__right__edit-btn
-              EDIT
-        .main__messages
-          .message
-            .message__info
-              %p.message__info__taker
-                member1
-              %p.message__info__date
-                2019 3/2(Thu) 19:38:31
-            %p.message__text
-              こんにちは
-        /チャット画面はここまで
+  .main
+    .main-header
+      .main-header__left
+        %h1.main-header__left__current-group
+          sample-group1
+        %ul.main-header__left__member-list
+          Member:
+          %li.main-header__left__member-list__member
+            member1
+          %li.main-header__left__member-list__member
+            member2
+          %li.main-header__left__member-list__member
+            member3
+      %a.main-header__right
+        .main-header__right__edit-btn
+          EDIT
+    .main__messages
+      .message
+        .message__info
+          %p.message__info__taker
+            member1
+          %p.message__info__date
+            2019 3/2(Thu) 19:38:31
+          %p.message__text
+            こんにちは
 
-        .main__form
-          %form.new-message
-            .input-box
-              %input(placeholder="type a message" class="input-box__text" type="text")
-                %i.fas.fa-image
-            %input(type="submit" class="submit-btn")
+    .main__form
+      %form.new-message
+        .input-box
+          %input(placeholder="type a message" class="input-box__text" type="text")
+            %i.fas.fa-image
+          %input(type="submit" class="submit-btn")
