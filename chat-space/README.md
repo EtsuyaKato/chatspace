@@ -30,7 +30,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, foregin_key: true|
+|group_name|string|null: false|
 
 ### Association
 - has_many :users_groups
