@@ -1,5 +1,6 @@
 @import "./reset";
+@import "config/colors";
+@import "modules/*";
 @import "./index";
-@import "devise/user";
-@import "./colors";
-@import "./flash";
+@import "./user";
+
