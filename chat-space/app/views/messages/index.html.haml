@@ -3,35 +3,30 @@
     .side-header
       .side-header__line
         %p.side-header__line__name
-          加藤
+          = current_user.name
         %ul.side-header__line__menu
           %li.side-header__line__menu__edit-user
-            %a(href="")
+            = link_to new_group_path do
               %i.far.fa-edit
           %li.side-header__line__menu__new-group
-            %a(href="")
+            = link_to edit_user_path(current_user) do
               %i.fas.fa-cog
 
 
     .groups
-      %a
-        .group
-          %p.group__name
-            sample-group1
-          %p.group__latest-message
-            こんにちは
-      %a
-        .group
-          %p.group__name
-            sample-group2
-          %p.group__latest-message
-            こんばんは
+      .group
+        - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
 
   .main
     .main-header
       .main-header__left
         %h1.main-header__left__current-group
-          sample-group1
+          グループ名
         %ul.main-header__left__member-list
           Member:
           %li.main-header__left__member-list__member
