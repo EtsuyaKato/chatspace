@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+
   def index
   end
 
@@ -16,16 +17,26 @@ class GroupsController < ApplicationController
       @group.errors.full_messages.each do |message|
         message
       end
+    end
   end
 
   def edit
   end
 
   def update
+    if @group.update(group_params)
+      redirect_to group_messages_path(@group), notice: 'グループを編集しました'
+    else
+      render
+    end
   end
 
   private
   def group_params
     params.requre(:group).permit(:name, { :user_ids => []})
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 end

@@ -9,18 +9,21 @@
             = link_to new_group_path do
               %i.far.fa-edit
           %li.side-header__line__menu__new-group
-            = link_to edit_user_path(current_user) do
+            = link_to edit_user_path do
               %i.fas.fa-cog
 
 
     .groups
+      - current_user.groups.each do |group|
       .group
         - current_user.groups.each do |group|
-        = link_to group_messages_path(group) do
-          .group__name
-            = group.name
-          .group__message
-            メッセージはまだありません。
+        = link_to
+          group__name
+          group_messages_path(group) do
+        .group__name
+          = group.name
+        .group__message
+          = group.show_last_message
 
   .main
     .main-header
@@ -39,18 +42,14 @@
         .main-header__right__edit-btn
           EDIT
     .main__messages
-      .message
-        .message__info
-          %p.message__info__taker
-            member1
-          %p.message__info__date
-            2019 3/2(Thu) 19:38:31
-          %p.message__text
-            こんにちは
+      = render @messages
 
     .main__form
       %form.new-message
-        .input-box
-          %input(placeholder="type a message" class="input-box__text" type="text")
-            %i.fas.fa-image
-          %input(type="submit" class="submit-btn")
+        = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'

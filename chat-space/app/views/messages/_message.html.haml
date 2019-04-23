@@ -1,0 +1,13 @@
+.main__messages
+      .message
+        .message__info
+          %p.message__info__taker
+            = message.user.name
+          %p.message__info__date
+            = message.crated_at.strftime("%Y/%m/%d %H:%M")
+        .message__content
+          - if message.content.present?
+          %p.message__text
+            = message.content
+          = image_tag message.image.url, class: 'message__content__image' if message.image.present?
+
